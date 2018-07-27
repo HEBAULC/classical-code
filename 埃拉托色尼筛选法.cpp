@@ -9,7 +9,7 @@ int main(){
 	 if(not np[i])   		//等同于p[i]==flase 即p[i]是素数
 	  {
 	    p[i]=1;			//用下表表示直接置1即可，原版是p[pNum++]=i
-	    for(int j=i; j<N; j+=i) 	
+	    for(int j=i; j<N; j+=i) 	//i+=j，表示的是i的倍数
 		np[j]=true;		//判断完成后，将该数字的所有倍数删去，包括它本身
 	  }
    } 
