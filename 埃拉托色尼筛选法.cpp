@@ -15,11 +15,11 @@ int main(){
    } 
   
 
-  for(int i=1; i<N; i++) 
-  p[i]+=p[i-1];
+  for(int i=1; i<N; i++)       //原始p[0]=0,p[1]=0,p[2]=1,p[3]=1,p[4]=0,p[5]=1,p[6]=0
+  p[i]+=p[i-1];                //加后p[0]=0,p[1]=0,p[2]=1,p[3]=2,p[4]=2,p[5]=3,p[6]=3,表示前n个数中素数的个数
   int n; cin>>n;
   long long ans=0;
   for(int i=1; i<=n; i++)
-    ans+=(long long)p[n/i]*(p[n/i]-1);
+    ans+=(long long)p[n/i]*(p[n/i]-1);	//如果是偶数找其素因数，如果是奇数，找小于它的偶数的素因数
   cout<<ans<<endl;
 }
